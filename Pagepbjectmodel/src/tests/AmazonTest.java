@@ -57,8 +57,10 @@ AllPage ap=new AllPage(driver);
 ap.clkOnAllIcon();
 ap.clkOnNewRlsIcon();
 
-ap.clkOnAllIcon();
-ap.clkOnEchoAAlexa();
+//ap.clkOnAllIcon();
+//ap.clkOnEchoAAlexa();
+
+ap.clkOnHAK();
 	}
 
 	

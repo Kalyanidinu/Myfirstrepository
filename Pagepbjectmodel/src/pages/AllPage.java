@@ -21,7 +21,8 @@ public class AllPage {
 	WebElement ClkNewReleases;
 	@FindBy(xpath ="//div[@id='hmenu-content']/descendant::li/div[text()='digital content and devices']/following::div[text()='Echo & Alexa']")
 	WebElement clkEcho;
-	
+	@FindBy(xpath ="//div[@class='celwidget c-f']/descendant::div/a[text()='Home & Kitchen']")
+	WebElement ClkOnHomeKitchenTab;
 	
 	
 	
@@ -47,6 +48,8 @@ public class AllPage {
 	public void clkOnEchoAAlexa() {
 		clkEcho.click();
 	}
-	
+	public void clkOnHAK() {
+		ClkOnHomeKitchenTab.click();
+	}
 
 }

@@ -24,8 +24,7 @@ public class BuyPage {
 	@FindBy(linkText = "View all orders")
 	WebElement clickOnViewOrdersLink;
 	@FindBy(xpath="//div[@id='ordersContainer']/child::div[@class='a-row a-spacing-extra-large a-spacing-top-large']")
-	
-	 WebElement getRequiredText;
+	WebElement getRequiredText;
 	 /* 
 	 * @FindBy(linkText = "View all orders") WebElement ViewOrdersText;
 	 */
@@ -95,9 +94,8 @@ public class BuyPage {
 		File source=tScr.getScreenshotAs(OutputType.FILE);
 		FileUtils.copyFile(source, new File("C:\\Users\\arako\\eclipse-workspace\\Vnktswara\\Screenshots.Image2.png"));
 		return getPaymentOptionsTxt.getText();
-		
-		
-		
-	}
+		}
+	
+	
 
 }
