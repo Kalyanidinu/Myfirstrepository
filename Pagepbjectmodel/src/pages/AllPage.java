@@ -23,7 +23,10 @@ public class AllPage {
 	WebElement clkEcho;
 	@FindBy(xpath ="//div[@class='celwidget c-f']/descendant::div/a[text()='Home & Kitchen']")
 	WebElement ClkOnHomeKitchenTab;
-	
+	@FindBy(xpath="//div[@class='celwidget c-f']/descendant::a[text()='Furniture']")
+	WebElement ClkFurnitureBtn;
+	@FindBy(xpath = "//div[@class='a-section _p13n-zg-banner-list-page-header_style_zgListPageBanner__3k1EE']")
+	WebElement GetTxtOfAmazonHotNewReleases;
 	
 	
 	public  AllPage(WebDriver driver) {
@@ -50,6 +53,16 @@ public class AllPage {
 	}
 	public void clkOnHAK() {
 		ClkOnHomeKitchenTab.click();
+	}
+	public void clkFurniture() {
+		ClkFurnitureBtn.click();
+	}
+	public String getAmazonHotreleases() {
+		 
+		return GetTxtOfAmazonHotNewReleases.getText();
+		
+		
+		
 	}
 
 }

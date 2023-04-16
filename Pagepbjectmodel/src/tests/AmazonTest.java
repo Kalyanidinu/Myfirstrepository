@@ -61,6 +61,9 @@ ap.clkOnNewRlsIcon();
 //ap.clkOnEchoAAlexa();
 
 ap.clkOnHAK();
+ap.clkFurniture();
+System.out.println(ap.getAmazonHotreleases());
+
 	}
 
 	
