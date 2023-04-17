@@ -8,8 +8,10 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+
 
 
 public class AllPage {
@@ -32,6 +34,11 @@ public class AllPage {
 	WebElement GetAlOptions;
 	@FindBy(linkText = "Gift Cards")
 	WebElement ClkGiftCard;
+	@FindBy(xpath = "//div[@id='nav-progressive-subnav']/descendant::a[@aria-label='Birthday']")
+	WebElement GiftCardForBday;
+	@FindBy(xpath = "//div[@class='a-section a-spacing-small']/descendant::span[text()='Recipient']/following::ul[@class='a-unordered-list a-nostyle a-vertical a-spacing-medium']/descendant::span[text()='Brother']")
+	WebElement BirtdayGiftBro;
+	
 	
 	public  AllPage(WebDriver driver) {
 		this.driver=driver;
@@ -80,6 +87,15 @@ public class AllPage {
 		TakesScreenshot tk1=(TakesScreenshot)driver;
 		File f1=tk1.getScreenshotAs(OutputType.FILE);
 		FileUtils.copyFile(f1, new File("C:\\Users\\arako\\eclipse-workspace\\Vnktswara\\GiftCards.jpg"));
+	}
+	
+	public void giftCardForBirthday() {
+		GiftCardForBday.click();
+	}
+	
+	public void birthdayBro() {
+		BirtdayGiftBro.click();
+	
 	}
 
 }
