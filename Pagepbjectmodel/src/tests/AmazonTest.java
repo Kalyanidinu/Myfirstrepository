@@ -68,6 +68,8 @@ ap.clkOnHAK();
 ap.clkFurniture();
 System.out.println(ap.getAmazonHotreleases());
 ap.getAmazonsCountOPtions();
+ap.clickOnGiftCard();
+System.out.println("Screenshot has taken for GiftCard page succefully");
 
 	}
 

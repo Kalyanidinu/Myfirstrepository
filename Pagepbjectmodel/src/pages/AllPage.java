@@ -2,7 +2,6 @@ package pages;
 
 import java.io.File;
 
-
 import org.apache.commons.io.FileUtils;
 
 import org.openqa.selenium.OutputType;
@@ -31,7 +30,8 @@ public class AllPage {
 	WebElement GetTxtOfAmazonHotNewReleases;
 	@FindBy(xpath = "//div[@class='_p13n-zg-nav-tree-all_style_zg-browse-group__88fbz']/descendant::div[@class='_p13n-zg-nav-tree-all_style_zg-browse-group__88fbz'  and @role='group']")
 	WebElement GetAlOptions;
-	
+	@FindBy(linkText = "Gift Cards")
+	WebElement ClkGiftCard;
 	
 	public  AllPage(WebDriver driver) {
 		this.driver=driver;
@@ -72,12 +72,14 @@ public class AllPage {
 		File files=tscr.getScreenshotAs(OutputType.FILE);
 		FileUtils.copyFile(files, new File("C:\\Users\\arako\\eclipse-workspace\\Vnktswara\\FurnitureOptions.jpg"));
 		GetAlOptions.getText();
+		}
+	
+	public void clickOnGiftCard() throws Exception {
 		
-		
-		
-		
-		
-		
+		ClkGiftCard.click();
+		TakesScreenshot tk1=(TakesScreenshot)driver;
+		File f1=tk1.getScreenshotAs(OutputType.FILE);
+		FileUtils.copyFile(f1, new File("C:\\Users\\arako\\eclipse-workspace\\Vnktswara\\GiftCards.jpg"));
 	}
 
 }
