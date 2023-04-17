@@ -4,12 +4,14 @@ import java.io.File;
 
 
 import org.apache.commons.io.FileUtils;
+
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+
 
 public class AllPage {
 	
@@ -27,6 +29,8 @@ public class AllPage {
 	WebElement ClkFurnitureBtn;
 	@FindBy(xpath = "//div[@class='a-section _p13n-zg-banner-list-page-header_style_zgListPageBanner__3k1EE']")
 	WebElement GetTxtOfAmazonHotNewReleases;
+	@FindBy(xpath = "//div[@class='_p13n-zg-nav-tree-all_style_zg-browse-group__88fbz']/descendant::div[@class='_p13n-zg-nav-tree-all_style_zg-browse-group__88fbz'  and @role='group']")
+	WebElement GetAlOptions;
 	
 	
 	public  AllPage(WebDriver driver) {
@@ -60,6 +64,17 @@ public class AllPage {
 	public String getAmazonHotreleases() {
 		 
 		return GetTxtOfAmazonHotNewReleases.getText();
+		
+		}
+	public void getAmazonsCountOPtions() throws Exception {
+		
+		TakesScreenshot tscr=(TakesScreenshot)driver;
+		File files=tscr.getScreenshotAs(OutputType.FILE);
+		FileUtils.copyFile(files, new File("C:\\Users\\arako\\eclipse-workspace\\Vnktswara\\FurnitureOptions.jpg"));
+		GetAlOptions.getText();
+		
+		
+		
 		
 		
 		

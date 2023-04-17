@@ -1,5 +1,7 @@
 package tests;
 
+import java.time.Duration;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -20,6 +22,8 @@ chrome.addArguments("--remote-allow-origins=*");
 WebDriver driver=new ChromeDriver(chrome);
 driver.get("https://www.amazon.in/");
 driver.manage().window().maximize();
+driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(30));
+driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 LoginPage lp=new LoginPage(driver);
 lp.clickOnSignInBtn();
 lp.fillUsername("8106537416");
@@ -63,6 +67,7 @@ ap.clkOnNewRlsIcon();
 ap.clkOnHAK();
 ap.clkFurniture();
 System.out.println(ap.getAmazonHotreleases());
+ap.getAmazonsCountOPtions();
 
 	}
 
