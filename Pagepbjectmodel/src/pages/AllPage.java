@@ -1,6 +1,7 @@
 package pages;
 
 import java.io.File;
+import java.util.List;
 
 import org.apache.commons.io.FileUtils;
 
@@ -38,7 +39,14 @@ public class AllPage {
 	WebElement GiftCardForBday;
 	@FindBy(xpath = "//div[@class='a-section a-spacing-small']/descendant::span[text()='Recipient']/following::ul[@class='a-unordered-list a-nostyle a-vertical a-spacing-medium']/descendant::span[text()='Brother']")
 	WebElement BirtdayGiftBro;
-	
+	@FindBy(xpath = "//*[@id=\"p_89/Amazon Pay\"]/span/a/span")
+	WebElement AmzPay;
+	@FindBy(xpath = "//span[@class='rush-component s-latency-cf-section']/child::div[@class='s-main-slot s-result-list s-search-results sg-row']/child::div")
+	List<WebElement> ItemsPrintOnUi;
+	@FindBy(xpath = "//div[@class='a-section a-spacing-none']/descendant::div[@class='a-section a-spacing-none']/following::ul")
+	List<WebElement> AllOpts;
+	@FindBy(xpath = "//div[@id='nav-main']")
+	List<WebElement> HeaderLabels;
 	
 	public  AllPage(WebDriver driver) {
 		this.driver=driver;
@@ -97,5 +105,45 @@ public class AllPage {
 		BirtdayGiftBro.click();
 	
 	}
+	
+	public void amazonPayment() throws Exception {
+		AmzPay.click();
+		TakesScreenshot tScrn=(TakesScreenshot)driver;
+		File f2=tScrn.getScreenshotAs(OutputType.FILE);
+		FileUtils.copyFile(f2, new File("C:\\Users\\arako\\eclipse-workspace\\Vnktswara\\AmazonPay.jpg"));
+	}
+	
+	
+	  public void listOfItemsPrint()
+	  
+	  { 
+		  for(int i=1;i<ItemsPrintOnUi.size();i++) {
+			 String str1=ItemsPrintOnUi.get(i).getText();
+			 System.out.println(str1);
+		  }
+		
+		   
+	  }
+	  
+	  public void alBrandOptions() {
+		  for(int j=1;j<AllOpts.size();j++) {
+			  String str2=AllOpts.get(j).getText();
+			  
+			  System.out.println(str2);
+			  
+		  }
+		  System.out.println("Total count of: " + AllOpts.size());
+	  }
+	  
+	  public void getHeaderOpt() {
+		  for(int k=1;k<HeaderLabels.size();k++) {
+		String str3=HeaderLabels.get(k).getText();
+		System.out.println(str3);
+		System.out.println(HeaderLabels.size());
+		  }
+	  }
+	  
+	  
+	 
 
 }

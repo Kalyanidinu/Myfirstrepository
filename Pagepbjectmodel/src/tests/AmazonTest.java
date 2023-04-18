@@ -24,12 +24,16 @@ driver.get("https://www.amazon.in/");
 driver.manage().window().maximize();
 driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(30));
 driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+
+//LoginPage methods
 LoginPage lp=new LoginPage(driver);
 lp.clickOnSignInBtn();
 lp.fillUsername("8106537416");
 lp.userNxt();
 lp.fillPwd("8106537416");
 lp.pwdNxt();
+
+//HomePage methods
 HomePage hp=new HomePage(driver);
 hp.searchItemintextField("interior decoration items");
 hp.searchMagnifiedIcon();
@@ -43,6 +47,7 @@ System.out.println(hp.getTxt() + ":" +hp.getNxtText());
 hp.ordersAndReturns();
 hp.allItemslistInReturnAOrders();
 
+//BuyPage methods
 BuyPage bp=new BuyPage(driver);
 bp.clickOnbuyAgainBtn();
 System.out.println("Item name is:"+bp.item() + "\nItem price is:"+bp.itemPrize());
@@ -58,6 +63,8 @@ System.out.println(bp.getPaymentOpt());
 System.out.println("Screenshot saved successfully for: " +bp.getPaymentOpt());
 	
 AllPage ap=new AllPage(driver);
+
+// AllPage methods
 ap.clkOnAllIcon();
 ap.clkOnNewRlsIcon();
 
@@ -72,6 +79,10 @@ ap.clickOnGiftCard();
 System.out.println("Screenshot has taken for GiftCard page succefully");
 ap.giftCardForBirthday();
 ap.birthdayBro();
+ap.amazonPayment();
+ap.listOfItemsPrint();
+ap.alBrandOptions();
+ap.getHeaderOpt();
 	}
 
 	
