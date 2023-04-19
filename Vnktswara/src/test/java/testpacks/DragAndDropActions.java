@@ -7,7 +7,7 @@ import org.testng.annotations.Test;
 
 
 import java.time.Duration;
-
+import java.util.List;
 
 import org.openqa.selenium.By;
 
@@ -47,10 +47,41 @@ public class DragAndDropActions {
 		select.selectByVisibleText("Option3");
 		System.out.println("Dropdown text selected successfully:" +element);
 		
-		WebElement e1=driver.findElement(By.xpath("//button[@class='btn btn-danger dropdown-toggle']"));
-		Select select2=new Select(e1);
-		select2.selectByIndex(1);
-		System.out.println("Dropdown selected successfully");
+		List<WebElement>  e2=driver.findElements(By.xpath("//table[@class='product']/descendant::tr/child::th"));
+		for(int i=0;i<e2.size();i++) {
+			String str=e2.get(i).getText();
+		
+			
+			System.out.println("Table header labels: " + str);
+			
+			
+		}
+		
+		/*
+		 * List<WebElement> e3=driver.findElements(By.xpath(
+		 * "//table[@class='product']/descendant::tr/child::th/following::tbody/child::tr"
+		 * )); for(int j=0;j<e3.size();j++) { String x2=e3.get(j).getText();
+		 * System.out.println(x2); }
+		 */
+		
+		List<WebElement> e4=driver.findElements(By.xpath("//table[@class='product']/descendant::tr/child::th/following::tbody[1]"));
+		for(int k=0;k<e4.size();k++)
+		{
+			String x3=e4.get(k).getText();
+			System.out.println(x3);
+		}
+		
+		System.out.println("Header labels count is: " +e2.size());
+		WebElement txtElement=driver.findElement(By.xpath("//div[text()='Total Amount Collected: 296']"));
+		txtElement.getText();
+		System.out.println(txtElement.getText());
+		
+		/*
+		 * WebElement e1=driver.findElement(By.
+		 * xpath("//button[@class='btn btn-danger dropdown-toggle']")); Select
+		 * select2=new Select(e1); select2.selectByIndex(1);
+		 * System.out.println("Dropdown selected successfully");
+		 */
 		
 		//WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(120,1));
 		//wait.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath("")));
@@ -86,4 +117,5 @@ public class DragAndDropActions {
 		 * 
 		 * 
 		 */}
+		
 }
