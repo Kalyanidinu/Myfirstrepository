@@ -12,6 +12,7 @@ import org.openqa.selenium.WebElement;
 
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.Select;
 
 
 
@@ -47,6 +48,9 @@ public class AllPage {
 	List<WebElement> AllOpts;
 	@FindBy(xpath = "//div[@class='nav-sprite']/child::div[@class='nav-fill']")
 	List<WebElement> HeaderLabels;
+	@FindBy(xpath="//select[@class='a-native-dropdown a-declarative']")
+	
+	WebElement selectDrp;
 	
 	public  AllPage(WebDriver driver) {
 		this.driver=driver;
@@ -145,6 +149,13 @@ public class AllPage {
 		  System.out.println(HeaderLabels.size());
 	  }
 	  
+	  public void getDrpdwnOpt() {
+			Select select=new Select(selectDrp);
+			select.selectByVisibleText("Avg. Customer Review");
+			
+
+
+	  }
 	  
 	 
 

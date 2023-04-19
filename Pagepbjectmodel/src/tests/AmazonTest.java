@@ -40,6 +40,8 @@ hp.searchMagnifiedIcon();
 hp.searchMagnifiedIcon();
 hp.clkFeatured();
 hp.selectNewArr();
+
+
 /*
  * hp.enterPrice("300"); hp.enterMaxPrice("600"); hp.goNxt();
  */
@@ -83,6 +85,7 @@ ap.amazonPayment();
 ap.listOfItemsPrint();
 ap.alBrandOptions();
 ap.getHeaderOpt();
+ap.getDrpdwnOpt();
 	}
 
 	
