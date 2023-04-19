@@ -45,7 +45,7 @@ public class AllPage {
 	List<WebElement> ItemsPrintOnUi;
 	@FindBy(xpath = "//div[@class='a-section a-spacing-none']/descendant::div[@class='a-section a-spacing-none']/following::ul")
 	List<WebElement> AllOpts;
-	@FindBy(xpath = "//div[@id='nav-main']")
+	@FindBy(xpath = "//div[@class='nav-sprite']/child::div[@class='nav-fill']")
 	List<WebElement> HeaderLabels;
 	
 	public  AllPage(WebDriver driver) {
@@ -139,8 +139,10 @@ public class AllPage {
 		  for(int k=1;k<HeaderLabels.size();k++) {
 		String str3=HeaderLabels.get(k).getText();
 		System.out.println(str3);
-		System.out.println(HeaderLabels.size());
+		
 		  }
+		  
+		  System.out.println(HeaderLabels.size());
 	  }
 	  
 	  
